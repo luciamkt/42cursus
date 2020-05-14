@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ltakahas <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ltakahas <ltakahas@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/16 11:09:28 by ltakahas          #+#    #+#             */
-/*   Updated: 2020/03/15 14:52:07 by ltakahas         ###   ########.fr       */
+/*   Updated: 2020/05/14 14:28:15 by ltakahas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static int	ft_line_end(char **line, char **str, char *buf)
 
 	i = 0;
 	len = ft_strlen(*str);
-	if ((*str)[i] && (*str)[i] == '\n')
+	if ((*str)[i] == '\n')
 	{
 		*line = ft_strdup("");
 		tmp = ft_substr(*str, 1, len);
