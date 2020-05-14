@@ -6,7 +6,7 @@
 /*   By: ltakahas <ltakahas@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/23 15:13:33 by ltakahas          #+#    #+#             */
-/*   Updated: 2020/05/09 16:56:26 by ltakahas         ###   ########.fr       */
+/*   Updated: 2020/05/14 14:16:33 by ltakahas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,9 +68,9 @@ static int	ft_check_flags(char *str, int i, t_infos *infos, va_list args)
 	return (i);
 }
 
-static int	ft_check_input(char *str, va_list args, t_infos *infos)
+static void	ft_check_input(char *str, va_list args, t_infos *infos)
 {
-	int		i;
+	int	i;
 
 	i = 0;
 	while (str[i])
@@ -82,7 +82,7 @@ static int	ft_check_input(char *str, va_list args, t_infos *infos)
 			i++;
 			i = ft_check_flags(str, i, infos, args);
 			if (str[i] == '\0')
-				return (infos->len);
+				return ;
 			if (ft_strchr(SPECIFIERS, str[i]))
 				ft_print_specifier(infos, args);
 			else if (str[i])
@@ -90,7 +90,6 @@ static int	ft_check_input(char *str, va_list args, t_infos *infos)
 		}
 		i++;
 	}
-	return (infos->len);
 }
 
 int			ft_printf(const char *format, ...)
